@@ -15,11 +15,16 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.16.1",
     "cors": "^2.8.3",
+    "cryptiles": "^4.1.2",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "faker": "^4.1.0",
+    "fresh": "^0.5.2",
     "jsonwebtoken": "^7.3.0",
-    "mongoose": "^4.8.4"
+    "lodash": "^4.17.11",
+    "mongoose": "^4.8.4",
+    "node-mime": "^1.0.0",
+    "url-parse": "^1.4.3"
   },
   "devDependencies": {
     "locus": "^2.0.1",
