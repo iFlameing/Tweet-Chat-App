@@ -1,0 +1,13 @@
+.message{
+    margin:auto auto;
+    border: 1px solid #ccc;
+    box-shadow: 2px 3px #eee;
+    width: 700px;
+    text-align: center;
+}
+
+@media(max-width:480px){
+    .message{
+        width:250px;
+    }
+}

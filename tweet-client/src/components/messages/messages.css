@@ -1,0 +1,25 @@
+.img{
+    height: 100%;
+    width: 100%;
+}
+
+.usermessage{
+    display: flex;
+    border:1px solid #ccc;
+    font-family: Raleway;
+    box-shadow: 2px 3px #eee;
+}
+
+.item{
+    margin-left: 20px;
+}
+@media(max-width:500px){
+    .img{
+        float: none;
+        display: block;
+        width: 100%;
+    }
+    .usermessage{
+        width: 250px;
+    }
+}
