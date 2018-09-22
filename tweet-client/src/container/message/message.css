@@ -1,9 +1,14 @@
+.container{
+    width: 100%;
+    height: 100%;
+    background-color:#ffe69a;
+    border: 20px solid #ffe69a;
+}
 .message{
     margin:auto auto;
-    border: 1px solid #ccc;
-    box-shadow: 2px 3px #eee;
     width: 700px;
     text-align: center;
+    margin-top: 20px;
 }
 
 @media(max-width:480px){

@@ -25,7 +25,7 @@ const NavLink1 = (props)=>{
     <div className ={classes.Navlink} >
         <div className={classes.brand}>
             <li>
-             <NavLink to="/"> Home</NavLink>
+             <NavLink to="/" > Home</NavLink>
             </li>
         </div>
         <div className = {classes.item}>

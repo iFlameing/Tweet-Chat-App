@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {signup} from '../action'
+import {signup} from '../../action'
 import classes from './auth.css'
 import {Redirect} from 'react-router-dom'
+import {Link} from "react-router-dom"
 
 class SignUP extends Component{
     constructor(props){
@@ -39,23 +40,26 @@ class SignUP extends Component{
                 <div>
                     <div>
                         <form className={classes.form} onSubmit={(event)=> this.handleOnsubmit(event)}>
-                            <div >
-                            <h1>SignUP</h1>
-                                    <div>Email</div>
-                                    <input className={classes.input} type="text" onChange={this.handleChange.bind(this)} name="email" placeholder="Please type your email!" value={this.state.email}/>
+                            <div  className={classes.item} >
+                                    <div>
+                                        <input className={classes.input} type="text" onChange={this.handleChange.bind(this)} name="email" placeholder="Please type your email!" value={this.state.email}/>
+                                    </div>
                               
-                                    <div>UserName</div>
-                                    <input className={classes.input} type="text" name="username" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your UserName" value={this.state.username}/>
+                                    <div>
+                                        <input className={classes.input} type="text" name="username" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your UserName" value={this.state.username}/>
+                                    </div>
                                
-                                    <div>Password</div>
-                                    <input className={classes.input} type="password"  name="password" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your Password"/>
+                                    <div>
+                                        <input className={classes.input} type="password"  name="password" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your Password"/>
+                                    </div>
                                 
-                                    <div>Image Url</div>
-                                    <input className={classes.input} type="text" name='imageurl' onChange={(event)=> this.handleChange(event)}  placeholder="Please give your profileImg link" value={this.state.imageurl}/>
+                                    <div>
+                                        <input className={classes.input} type="text" name='imageurl' onChange={(event)=> this.handleChange(event)}  placeholder="Please give your profileImg link" value={this.state.imageurl}/>
+                                    </div>
                                 <div>
                                     <input className={classes.submit} type="submit" value="SignUP"/>
-
                                 </div>  
+                                <span className = {classes.signup}>Already Registered</span><span className = {classes.signup} ><Link  to="/Login">Login</Link></span> 
                             </div>
                         </form>
                     </div>
