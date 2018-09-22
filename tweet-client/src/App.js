@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Login from './components/LoginPage';
-import Signup from './components/Signup';
-import Logout from './components/Logout/logout'
-import Message from './components/message/message'
-import Navlink from './components/NavLink/navlink'
-import AddMessage from './components/message/addmessage'
+import Login from './container/Login/LoginPage';
+import Signup from './container/Signup/Signup';
+import Logout from './container/Logout/logout'
+import Message from './container/message/message'
+import Navlink from './container/NavLink/navlink'
+import AddMessage from './container/message/addmessage'
 import {Switch,Route,withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 

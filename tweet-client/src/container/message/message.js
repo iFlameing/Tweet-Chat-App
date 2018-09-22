@@ -15,15 +15,12 @@ class Message extends Component{
         let message1="";
         if(message.length!==0){
          message1 =  message.map(mes=>( <MessageLoader name={mes.userId.username} text={mes.text} img={mes.userId.profileImageUrl} />))
-    }
+        }
         return(
-            <div>
+            <div className={classes.container}>
                 <div className={classes.message} >{message1}</div>
-                
-                <h1>This is from the message page</h1>
             </div>
-        )
-    }
+        )}
 }
 
 const mapStateToProps = state=>({
