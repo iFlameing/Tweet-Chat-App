@@ -4,6 +4,8 @@ import Signup from './container/Signup/Signup';
 import Logout from './container/Logout/logout'
 import Message from './container/message/message'
 import Navlink from './container/NavLink/navlink'
+import Profile from './container/profile/profile'
+import Questions from './container/questionsforsmvdu/questions'
 import AddMessage from './container/message/addmessage'
 import {Switch,Route,withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -18,6 +20,8 @@ class App extends Component {
         <Route exact path="/Login"  component={Login}/>
         <Route exact path="/addMessage" component={AddMessage}/>
         <Route  exact path="/logout"   component={Logout}/>
+        <Route  exact path="/profile"  component={Profile}/>
+        <Route   exact path="/questions" component={Questions}/>
         <Route path="/"       component={Message}/>
       </Switch>
       </div>

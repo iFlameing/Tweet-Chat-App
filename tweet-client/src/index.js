@@ -17,8 +17,8 @@ const commonreducer = combineReducers({
 const store=createStore(commonreducer,applyMiddleware(thunk));
 
 const getCurrentUser=()=>{
-    const token1 = localStorage.getItem('token')
-    let user1  = localStorage.getItem('user')
+    const token1 = localStorage.getItem('user-for-tweetApp')
+    let user1  = localStorage.getItem('user-for-tweetApp')
     user1=JSON.parse(user1)
     return {
         token:token1,user:user1

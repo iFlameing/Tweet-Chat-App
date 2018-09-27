@@ -17,12 +17,12 @@ class SignUP extends Component{
     }
     handleOnsubmit(e){
         e.preventDefault();
-        const data={
-            email:this.state.email,
-            username:this.state.username,
-            password:this.state.password,
-            profileImageUrl:this.state.imageurl
-        }
+        const data =new FormData()
+        data.append('files',this.state.imageurl)
+        data.append('email',this.state.email)
+        data.append('username',this.state.username)
+        data.append('password',this.state.password)
+        
         this.props.submit(data)
     }
 
@@ -30,6 +30,10 @@ class SignUP extends Component{
         this.setState({
             [e.target.name]:e.target.value,
         })
+    }
+    onchangeHandler=(e)=>{
+        console.log(e.target.files[0]);
+        this.setState({imageurl:e.target.files[0]})
     }
 
     render(){
@@ -52,9 +56,8 @@ class SignUP extends Component{
                                     <div>
                                         <input className={classes.input} type="password"  name="password" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your Password"/>
                                     </div>
-                                
                                     <div>
-                                        <input className={classes.input} type="text" name='imageurl' onChange={(event)=> this.handleChange(event)}  placeholder="Please give your profileImg link" value={this.state.imageurl}/>
+                                        <input type="file" onChange={this.onchangeHandler} />
                                     </div>
                                 <div>
                                     <input className={classes.submit} type="submit" value="SignUP"/>

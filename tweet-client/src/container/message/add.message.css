@@ -39,6 +39,7 @@ textarea{
     position: relative;
     color: black;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .submit:hover{
@@ -58,7 +59,18 @@ background-color: #042337;
         background-color: lightgray;
     }
     100%{
-        transform: translateX(300px);
+        transform: translateX(150px);
         opacity: 1;
+    }
+}
+
+@media(max-width:500px){
+    form{
+        width: 300px;
+        animation: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        height: 320px;
     }
 }

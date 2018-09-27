@@ -11,10 +11,14 @@ class Message extends Component{
         this.props.loadmessage();
     }
     render(){
-        const message = this.props.messages.filter((v,i)=> i<10)
+        const message = this.props.messages.reverse().filter((v,i)=> {
+                        return i<10;
+        })
         let message1="";
+        let count=0;
         if(message.length!==0){
-         message1 =  message.map(mes=>( <MessageLoader name={mes.userId.username} text={mes.text} img={mes.userId.profileImageUrl} />))
+            count++;
+         message1 =  message.map(mes=>( <div key={count.toString()} ><MessageLoader   name={mes.userId.username} text={mes.text} img={`http://localhost:8081/${mes.userId.profileImageUrl}`} /></div>))
         }
         return(
             <div className={classes.container}>
