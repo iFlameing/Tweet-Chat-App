@@ -1,23 +1,48 @@
 
-.item{
+.usermessage{
+    display: flex;
+    margin: 10px;
+    border: 2px solid #eee;
+    background-color: gray;
+    animation: move 1s  ease-in-out forwards;
+}
+.img1{
+    height: 100%;
+    width: 150px;
+}
+h1{
+    font-size: 20px;
     margin-left: 20px;
 }
-@media(max-width:500px){
-    .img{
-        float: none;
-        display: block;
-        width: 100%;
-    }
-    .usermessage{
-        width: 250px;
-    }
+
+p{
+    margin-left: 20px;
+    margin-right: 5px;
 }
 
 @keyframes move{
     0%{
-        transform: translateX(400px);
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    25%{
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 0.6;
+    }
+    75%{
+        opacity: 0.8;
     }
     100%{
-        transform: translateX(70px);
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+@media(max-width:500px){
+    .usermessage{
+        color: red;
     }
 }

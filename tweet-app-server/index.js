@@ -8,6 +8,7 @@ var messagesRoutes = require("./routes/messages");
 var auth = require('./middleware/auth');
 var db = require("./models");
 
+app.use('/uploads',express.static('uploads'))
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));

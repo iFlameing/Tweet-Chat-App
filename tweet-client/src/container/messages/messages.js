@@ -6,12 +6,12 @@ const UserMessage = props => {
     return(
         <div className={classes.container} >
             <div className={classes.usermessage} >
-                <div>
-                    <img className={classes.img} src={props.img} alt="asd"/>
+                <div className={classes.img} >
+                    <img className={classes.img1} src={props.img} alt="imagelink"/>  
                 </div>
-                <div className={classes.item}>
-                    <h1>{props.name}</h1>
-                    <p>{props.text}</p>
+                <div>
+                    <h1>{`@${props.name}`}</h1>
+                    <p>{props.text}</p>  
                 </div>
             </div>
         </div>  

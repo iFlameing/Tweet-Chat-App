@@ -9,6 +9,7 @@
 }
 
 .form{
+    width: 500px;
     margin:auto ;
     margin-top: 20%; 
     background-color: white;
@@ -67,7 +68,27 @@
         opacity: 0.5;
     }
     100%{
-        transform: translateY(-200px);
+        transform: translateY(-150px);
+        opacity: 1;
+    }
+}
+
+@media(max-width:500px){
+    .form{
+    animation: movel 2s ease-out  1 forwards; 
+    }
+}
+@keyframes movel{
+    0%{
+        background-color: black;
+        transform: translateY(700px);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateY(-40px);
         opacity: 1;
     }
 }
