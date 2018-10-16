@@ -34,5 +34,8 @@ const upload = multer({
 
 router.post('/signin', helpers.signin);
 router.post('/signup',upload.single("files"), helpers.signup);
+router.post('/passwordreset',helpers.passwordreset);
+router.post("/passwordreset/:id/:token",helpers.verifyingpasswordreset);
+router.post("/finalreset",helpers.finalreset);
 
 module.exports = router;
