@@ -82,6 +82,74 @@ export const signin =(data)=>(
         
     }
 )
+const passwordreset =(data,url)=>{
+    return fetch(url,{
+        method:"post",
+        headers: new Headers({
+            'Content-Type': 'application/json'
+          }),
+        body: JSON.stringify(data)
+    }).then(res=>{
+        if(!res.ok){
+            alert("something goes wrong ")
+            return res.json().then(data => {
+                let err = {authErrorMessage: data.message};
+                throw err;
+              })
+        }
+        else{
+            return res.json()
+        }
+    })
+}
+
+const emailSent = ()=>({
+    type:"email"
+})
+
+export const resetpassword =(data)=>(
+    dispatch =>{
+        passwordreset(data,'/api/auth/passwordreset')
+        .then(currentuser=>{
+            console.log(currentuser)
+            dispatch(emailSent())
+        })
+    }
+)
+const passwordchange =()=>({
+    type:"passwordchange"
+})
+
+const changepassword1 =(data,url)=>{
+    return fetch(url,{
+        method:"post",
+        headers:new Headers({
+            'Content-Type':'application/json'
+        }),
+        body:JSON.stringify(data)
+    }).then(res=>{
+        if(!res.ok){
+            alert("something goes wrong");
+            return res.json().then(data => {
+                let err = {authErrorMessage: data.message};
+                throw err;
+              })
+            
+        }
+        else{
+            return res.json()
+        }
+    })
+}
+export const changepassword =(data)=>(
+    dispatch=>{
+        changepassword1(data,"/api/auth/finalreset")
+        .then(res=>{
+            console.log(res);
+            dispatch(passwordchange())
+        })
+    }
+)
 
 
 

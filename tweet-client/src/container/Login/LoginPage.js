@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {connect} from 'react-redux'
 import  { signin } from '../../action'
 import classes from './auth.css'
-import {Redirect} from 'react-router-dom'
+import {Redirect,withRouter} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
 class Login extends Component{
@@ -109,7 +109,7 @@ class Login extends Component{
                         <div>
                             {submit}
                         </div>
-                        <span  className = {classes.signup}>Not Registered</span><span className = {classes.signup} ><Link  to="/signup">signup</Link></span> 
+                        <span  className = {classes.signup}></span><span className = {classes.signup} ><Link to="/resetpassword" >forgetpassword</Link></span> 
                      </div>
                 </form>
             </div>
@@ -125,4 +125,4 @@ const mapDispatchToProps = dispatch =>({
     submit:(data)=>(dispatch(signin(data)))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
