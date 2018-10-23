@@ -1,6 +1,10 @@
 var db = require('../models');
 var jwt = require('jsonwebtoken');
 var bcrypt = require("bcryptjs");
+var nodemailer = require("nodemailer");
+
+
+
 
 
 exports.signin = function(req,res){
@@ -51,12 +55,36 @@ res.json("it worked")
 }
 
 exports.passwordreset = function(req,res,next){
+  console.log(req.body.email);
+  var transporter = nodemailer.createTransport({
+    service: "Gmail",
+    port: 587,
+    secure: false, 
+    auth:{
+      user:'funapp1076@gmail.com',
+      pass:"Alok@9988"
+    },
+  });
+
   console.log("ressetpasswordroute hit");
   db.User.findOne({email:req.body.email}).then(function(user){
     var token = jwt.sign({userId:user.id,password:user.password},process.env.SECRET_KEY);
+    transporter.sendMail({
+      from:"funapp1076@gmail.com",
+      to:req.body.email,
+      subject:"ResetPasswordForTweetApp",
+      text: 'Hello world ?',
+      html:`http://localhost:8081/api/auth/passwordreset/${user.id}/${token}`},function(err,info){
+        if(err){
+          console.log(err);
+        } else {
+          console.log(info);
+          console.log("Email sent successfully")
+        }
+      })
     res.status(200).json({
       message:"you hit the reset password route",
-      link:`<a href=/resetpassword / ${user.id} / ${token} >ResetPassword</a>`,
+      link:`<a href=/api/auth/passwordreset/ ${user.id} / ${token} >ResetPassword</a>`,
       token
     })
   }).catch(function(err){
@@ -68,11 +96,12 @@ exports.verifyingpasswordreset = function(req,res,next){
   console.log("passwordresetroute is hit");
   jwt.verify(req.params.token,process.env.SECRET_KEY,function(err,decode){
     if(decode){
-      res.status(200).json({
-        message:"user successfully verified",
-        userId:req.params.userId,
-        token:req.params.token
-      })
+      res.redirect(`http://localhost:3000/changePassword/${req.params.id}/${req.params.token}`)
+      // res.status(200).json({
+      //   message:"user successfully verified",
+      //   userId:req.params.id,
+      //   token:req.params.token
+      // })
     }
     else{
       res.status(401).json({
@@ -89,21 +118,21 @@ exports.finalreset = function(req,res,next){
         message:"error from creating hash password"
       })
     } else{
-        db.User.findOneAndUpdate({_id:req.body.userId},{$set:{password:hash}},function(err,user){
-          if(err){
-            res.status(401).json({
-              message:"password update fail"
+            db.User.findOneAndUpdate({_id:req.body.userId},{$set:{password:hash}},function(err,user){
+              if(err){
+                res.status(401).json({
+                  message:"password update fail"
+                })
+              }
+              else{
+                res.status(200).json({
+                  message:"password updated successfully"
+                })
+              }
             })
-          }
-          else{
-            res.status(200).json({
-              message:"password updated successfully"
-            })
+
           }
         })
     }
-  })
-  
-}
 
 module.exports = exports;

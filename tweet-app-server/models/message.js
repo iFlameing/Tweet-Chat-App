@@ -8,6 +8,9 @@ var messageSchema = new mongoose.Schema({
     required: true,
     maxLength: 160
   },
+  image: {
+    type:String,
+  },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
