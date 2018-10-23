@@ -196,10 +196,9 @@ const messagepostRequest=(text,url)=>{
     return fetch(url, {
       method: "post",
       headers: new Headers({
-        'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       }),
-      body: JSON.stringify({text})
+      body: text
     })
       .then(resp => {
         
@@ -221,9 +220,9 @@ const messagepostRequest=(text,url)=>{
 
 
 
-export const postnewmessage = (data)=>(
+export const postnewmessage = (data,userId)=>(
     dispatch=>{
-        messagepostRequest(data.text,`/api/users/${data.userId}/messages`)
+        messagepostRequest(data,`/api/users/${userId.userId}/messages`)
         .then(res=> { return dispatch(addmessage(res))})
     }
 )

@@ -1,23 +1,27 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
 
 .usermessage{
     display: flex;
     margin: 10px;
-    border: 2px solid #eee;
-    background-color: gray;
+    width: 100%;
     animation: move 1s  ease-in-out forwards;
 }
 .img1{
-    height: 100%;
-    width: 150px;
-}
-h1{
-    font-size: 20px;
-    margin-left: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
 }
 
+
+h1{
+    font-size: 15px;
+    margin-left: 5px;
+}
 p{
-    margin-left: 20px;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 @keyframes move{
@@ -46,3 +50,27 @@ p{
         color: red;
     }
 }
+
+
+.img2{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin: 2px;
+    width: 98%;
+    height: 300px;
+}
+
+.text{
+    display: flex;
+    flex-flow: row;
+}
+.second{
+    flex: 2;
+}
+.first{
+    flex: 0;
+}
+
+/* .container{
+    border: 1px solid red;
+} */

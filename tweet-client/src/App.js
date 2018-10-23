@@ -11,13 +11,18 @@ import AddMessage from './container/message/addmessage'
 import {Switch,Route,withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import NewPassword from './components/ForgetPassword/newpassword';
+import Aux from './hoc/aux'
 
 class App extends Component {
   render() {
     return (
       <div>
-      <Navlink  logout={this.props.logout} username={this.props.username}/>
-      <Switch>
+        <Aux>
+        <div>
+           <Navlink  logout={this.props.logout} username={this.props.username}/>
+        </div>
+        <div>
+        <Switch>
         <Route exact path="/signup" component={Signup}/>
         <Route exact path="/Login"  component={Login}/>
         <Route exact path="/addMessage" component={AddMessage}/>
@@ -28,6 +33,9 @@ class App extends Component {
         <Route exact path="/changePassword/:id/:token"  component={NewPassword}/>
         <Route  exact path="/"       component={Message}/>
       </Switch>
+        </div>
+
+      </Aux>
       </div>
     );
   }
