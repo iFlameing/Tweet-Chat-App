@@ -1,9 +1,14 @@
 var db = require('../models');
 
+
 exports.createMessage = function(req,res,next){
+  const image = req.file ? req.file.path:""
+  console.log(req.file)
+  console.log(req.body.text)
   const newMessage = {
     text: req.body.text,
-    userId: req.params.id
+    userId: req.params.id,
+    image:image
   };
   
   db.Message.create(newMessage).then(function(message){

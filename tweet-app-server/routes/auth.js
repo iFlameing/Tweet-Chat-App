@@ -4,7 +4,6 @@ var db = require("../models");
 var jwt = require('jsonwebtoken');
 var helpers = require('../helpers/auth');
 const multer = require('multer');
-// const upload=multer({dest:'uploads/'})
 
 const storage = multer.diskStorage({
   destination:function(req,file,cb){
@@ -35,7 +34,7 @@ const upload = multer({
 router.post('/signin', helpers.signin);
 router.post('/signup',upload.single("files"), helpers.signup);
 router.post('/passwordreset',helpers.passwordreset);
-router.post("/passwordreset/:id/:token",helpers.verifyingpasswordreset);
+router.get("/passwordreset/:id/:token",helpers.verifyingpasswordreset);
 router.post("/finalreset",helpers.finalreset);
 
 module.exports = router;
