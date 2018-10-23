@@ -1,0 +1,44 @@
+.top{
+    height: 150px;
+    background-color: teal;
+    position: relative;
+}
+.img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position:relative;
+    top: -40px;
+    left: 15px;
+    border: 5px solid white;
+}
+
+.container{
+    display: flex;
+    flex-flow: row;
+}
+.username{
+    position: relative;
+    left: 20px;
+}
+.span{
+    font-size: 15px;
+    color: grey;
+    margin-right: 10px;
+}
+.span2{
+    font-size: 15px;
+    margin-right: 80px;
+    color: #55b7f9;
+    margin-left:5px;
+    position: relative;
+    top: -15px; 
+}
+h1{
+    font-size: 20px;
+}
+h2{
+    font-size: 15px;
+    color:#55b7f9;
+    margin-left: 15px;
+}

@@ -7,23 +7,31 @@ import {Redirect} from "react-router-dom"
 class AddMessage extends Component{
 
     state={
-        text:''
+        text:'',
+        image:""
     }
 
 
     submitHandler(e){
         e.preventDefault();
-        const data ={
-            userId:this.props.userId,
-            text:this.state.text
+        alert("submit handler is making this sound")
+
+        const data =new FormData()
+        data.append('files',this.state.image)
+        data.append('text',this.state.text)
+        const userId={
+            userId:this.props.userId
         }
-        this.props.addmessage(data);
+        this.props.addmessage(data,userId);
     }
 
     onchangehandler(event){
         this.setState({
             text:event.target.value
         })
+    }
+    imageHandle=(e)=>{
+        this.setState({image:e.target.files[0]})
     }
 
 
@@ -39,7 +47,9 @@ class AddMessage extends Component{
                 <form onSubmit={(event)=>this.submitHandler(event)}>
                     <div className={classes.item}>Enter The Message</div>
                     <textarea  onChange={(event)=>this.onchangehandler(event)} cols={40} rows={10}  />
-                            <input className={classes.submit} type="submit" value="Submit" />     
+                    <input type="file" onChange={this.imageHandle} />
+                            <input className={classes.submit} type="submit" value="Submit" />
+
                         
                 </form>
             </div>
@@ -53,7 +63,7 @@ const mapStateToProps = state=>({
 })
 
 const mapStateToDispatch=dispatch=>({
-    addmessage:(data)=>{ console.log(data); return dispatch(postnewmessage(data))}
+    addmessage:(data,userId)=>{ console.log(data); return dispatch(postnewmessage(data,userId))}
 })
 
 export default connect(mapStateToProps,mapStateToDispatch)(AddMessage);
