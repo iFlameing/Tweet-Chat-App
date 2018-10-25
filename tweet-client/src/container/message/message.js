@@ -17,10 +17,13 @@ class Message extends Component{
         const message = this.props.messages.reverse().filter((v,i)=> {
                         return i<10;
         })
+        let image= ""
         console.log(message);
         let user = JSON.parse(localStorage.getItem('user-for-tweetApp'))
-        console.log(user.username);
-        let image= `http://localhost:8081/${user.profileImageUrl}`
+        if(user){
+         image= `http://localhost:8081/${user.profileImageUrl}`
+
+        }
         let message1="";
         let count=0;
         if(message.length!==0){

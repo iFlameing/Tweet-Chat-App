@@ -11,6 +11,12 @@ var messageSchema = new mongoose.Schema({
   image: {
     type:String,
   },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment"
+    }
+],
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

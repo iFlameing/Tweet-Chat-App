@@ -24,4 +24,10 @@ exports.createMessage = function(req,res,next){
   }).catch(next);
 };
 
+exports.foundMessage = (req,res,next)=>{
+  db.Message.findById(req.params.id).populate("userId",{username:true,profileImageUrl:true}).then(function(message){
+    return res.status(200).json(m);
+  }).catch(next);
+}
+
 module.exports = exports;
