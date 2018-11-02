@@ -1,14 +1,12 @@
 .container{
     display: flex;
     justify-content: space-between;
-    flex-flow: column;
 }
 
 .usermessage{
     display: flex;
     margin: 10px;
     width: 100%;
-    animation: move 1s  ease-in-out forwards;
 }
 .img1{
     height: 80px;
@@ -23,26 +21,6 @@ h1{
 }
 p{
     margin-left: 5px;
-}
-
-@keyframes move{
-    0%{
-        opacity: 0;
-        transform: translateX(1000px);
-    }
-    25%{
-        opacity: 0.4;
-    }
-    50%{
-        opacity: 0.6;
-    }
-    75%{
-        opacity: 0.8;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
 }
 
 
@@ -71,22 +49,17 @@ p{
 .first{
     flex: 0;
 }
-
-.NavLink{
-    text-decoration: none;
-    color: black;
-}
-.button{
-    border:0;
-    background-color: white;
-    margin: 10px;
-    cursor: pointer;
+.container1{
+    display: flex;
+    flex-flow: row;
 }
 
-.icon1{
-    color: red;
-    border: 1px solid red;
+.flex1{
+    flex: 1;
 }
-.liked{
-    background-color: red;
+.flex2{
+    flex: 1;
+}
+.flex3{
+    flex: 2;
 }

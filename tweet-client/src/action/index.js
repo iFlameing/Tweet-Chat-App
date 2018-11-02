@@ -226,6 +226,40 @@ export const postnewmessage = (data,userId)=>(
         .then(res=> { return dispatch(addmessage(res))})
     }
 )
+const foundmessage1 =(url,token)=>{
+    return fetch(url, {
+      method: "get",
+      headers: new Headers({
+        'Authorization': `Bearer ${token}`
+      }),
+    }).then(res=>{
+        if(!res.ok){
+            alert(res.message)
+            return res.json().then(data => {
+                let err = {errorMessage: data.message};
+                throw err;
+              })
+            
+        }
+            return res.json()
+    })
+}
+
+const found = (payload)=>({
+    type:"FOUND",
+    payload:payload
+})
+export const foundmessage = (userId)=>(
+    dispatch=>{
+        foundmessage1(`/api/users/${userId.userId}/messages/${userId.imageId}`,userId.token)
+        .then(mes=>{
+            console.log(mes);
+            dispatch(found(mes))
+        })
+    }
+)
+
+
 
 
 export const Logout =()=>(

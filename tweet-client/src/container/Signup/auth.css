@@ -2,13 +2,116 @@
     height: 100vh;
     width: 100%;
     border: 1px solid #008060;
-    /* background: url('../../assests/techno5-0.png');
+    background: url('../../assests/signup.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%; */
+    background-size: 100% 100%;
     background-color:#008060;
+    display: flex;
+}
+.singupContainer{
+    display: flex;
+    flex-flow: column;
+
 }
 
-.form{
+.signupIntro{
+    padding: 1rem;
+    flex: 1;
+    max-width: 500px;
+}
+.h2{
+    font-size: calc(2rem + 0.75vw);
+    font-weight: 300;
+        margin-bottom: 20vh;
+    }
+.p{
+    font-size :1.2rem;
+   line-height: 2;
+   color: white;
+}
+
+.Input{
+    flex: 1;
+    margin-top: 100px;
+    margin-left: 100px;
+
+}
+.input{
+    border: none;
+    outline:none;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border-bottom: 1px solid white;
+    background: none;   
+    color: white;
+    padding: 0.5rem 1.2rem;
+    width: 400px;
+    cursor: pointer;
+}
+
+.submit
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4faeb6;
+    border: none;
+    border-radius: 10px;
+
+}
+.submit:hover{
+    transform: scale(1.2);
+}
+
+.signup{
+    color: white;
+}
+
+.link
+{
+    color: white;
+    text-decoration: underline;
+    margin-left: 10px;
+    padding: 5px;
+    color: #4faeb6;
+    opacity: 1;
+}
+.link:hover{
+    text-decoration:underline;
+    color: #4faeb6;
+    transform: scale(1.5);
+    opacity: 0.5;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.label
+    {
+        
+        color: white;
+        background-color: #4faeb6;
+        padding: 10px;
+        display: inline-block;
+        opacity: 0.7;
+        cursor: pointer;
+    }
+.label:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.fa{
+    margin: 100px;
+}
+
+/* .form{
     margin:auto ;
     width: 500px;
     margin-top: 0%; 
@@ -16,12 +119,12 @@
     box-sizing: border-box;
     box-shadow:    2px 3px 2px  #ccc;
     animation: move 2s ease-out  1 forwards; 
-}
-.item{
+} */
+/* .item{
     margin-top: 20px;
-}
+} */
 
-.input{
+/* .input{
  
         width: 50%;
         padding: 5px;
@@ -30,8 +133,8 @@
         border: 1px solid gray;
     
     
-}
-
+} */
+/* 
 .submit{
     margin-top: 20px;
     width: 55%;
@@ -45,21 +148,21 @@
     border-radius: 20px;
     box-shadow: 0px 3px green;
     position: relative;
-}
+} */
 
-.signup{
+/* .signup{
     font-size: 15px;
     color:gray;
     margin-right: 5px;
-}
+} */
 
-.submit:hover{
+/* .submit:hover{
     background-color: darkgreen;
     box-shadow: 0px 2px green;
     top:2px;
-}
+} */
 
-@keyframes move{
+/* @keyframes move{
     0%{
         background-color: black;
         opacity: 0;
@@ -72,4 +175,4 @@
         transform: translateY(50px);
         opacity: 1;
     }
-}
+} */

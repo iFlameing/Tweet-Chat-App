@@ -1,6 +1,7 @@
 const initialstate = {
     message:[],
-    messagepost:false
+    messagepost:false,
+    foundmessage:"",
 }
 
 const messageReducer =(state=initialstate,action)=>{
@@ -14,6 +15,11 @@ const messageReducer =(state=initialstate,action)=>{
 
             return{
                 ...state,messagepost:true
+            }
+        }
+        case "FOUND":{
+            return{
+                ...state,foundmessage:action.payload,
             }
         }
         default: {

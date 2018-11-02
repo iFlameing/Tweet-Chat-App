@@ -85,7 +85,7 @@ class Login extends Component{
     }
     render(){
         const redirect = this.props.logout?<Redirect to="/" />:"";
-        let submit=(<button disabled >Login</button>)
+        let submit=(<button disabled className={classes.submitDisabled} >Login</button>)
         if(this.state.formisvalid){
             submit=( <input className={classes.submit} type="submit" value="Login"/>)
            
@@ -93,25 +93,44 @@ class Login extends Component{
         return (
             <div className={classes.container}>
             {redirect}
-                <form className={classes.form} onSubmit={(event)=>this.onsubmithandler(event)}>
+            <div>
+            <form className={classes.form} onSubmit={(event)=>this.onsubmithandler(event)}>
+            <span className={classes.span}>login.</span>
                     <div className={classes.item}>
+                            <div className={classes.emailContainer}>
+                            <label className={classes.label}>
+                                Email:      
+                                <input className={classes.inputEmail} type="text" name='email' onChange={(event)=>this.onchange(event)}  placeholder="Enter your email"/>
+                            </label>
+                            </div>
                         <div>
-                            <input className={classes.input} type="text" name='email' onChange={(event)=>this.onchange(event)}  placeholder="Enter your email"/>
-
+                            <label className={classes.label}>
+                                UserName: 
+                            <input className={classes.inputUsername} type="text" name="username" onChange={(event)=> this.onchange(event)} placeholder="Enter your UserName" />
+                            </label>
                         </div>
                         <div>
-                            <input className={classes.input} type="text" name="username" onChange={(event)=> this.onchange(event)} placeholder="Enter your UserName" />
-
-                        </div>
-                        <div>
-                            <input className={classes.input} type="password"  name='password' onChange={(event)=> this.onchange(event)} placeholder="Enter your Password" /> 
+                            <label className={classes.label}>
+                                Password:
+                            <input className={classes.inputPassword} type="password"  name='password' onChange={(event)=> this.onchange(event)} placeholder="Enter your Password" /> 
+                            </label>
                         </div>
                         <div>
                             {submit}
                         </div>
-                        <span  className = {classes.signup}></span><span className = {classes.signup} ><Link to="/resetpassword" >forgetpassword</Link></span> 
+                        <div className = {classes.reset} ><Link className={classes.reset} to="/resetpassword" >ForgetPassword?</Link></div> 
+                     </div>
+                     <div>
+                         <div className={classes.signupContainer}>
+                            <div className={classes.vr}></div>
+                            <div className={classes.signup}><p>SignUp</p><p>Not Yet Registered Click SignUp</p>
+                            <div><Link className={classes.signUpButton} to="/SignUp" >SignUp</Link></div></div>
+                         </div>
                      </div>
                 </form>
+            </div>
+
+       
             </div>
         )
     }

@@ -1,22 +1,24 @@
 .form{
-    height: 100vh;
-    border: 1px solid #00312e;
-    background-color: #00312e;
+    background: url('../../assests/message1.jpg');
+    height:100vh;
+    border: 1px solid green;
+}
+.formContainer1{
+margin-top: 100px;
 }
 .item {
     margin:20px 10px;
     font-size: 30px;
     color:black;
 }
-form{
+.formContainer{
     border: 2px solid #ccc;
-    background-color:grey;
+    background-color:#008247;
     width: 700px;
     text-align: center;
     font-size: 30px;
     height: 300px;
-    margin-top: 5%;
-    animation: move 2s ease-in-out 0s 1 forwards;
+    margin:auto;
 }
 textarea{
     margin-left: 0px;
@@ -34,18 +36,20 @@ textarea{
     padding: 5px;
     font-size: 20px;
     text-transform: uppercase;
-    background-color:#042337;
+    background-color:#a12200;
     box-shadow: 0 6px #042337;
     position: relative;
     color: black;
     margin-top: 10px;
     cursor: pointer;
+    color: white;
+    
 }
 
 .submit:hover{
 box-shadow: 0 4px #042337;
 top: 2px;
-background-color: #042337;
+background-color: #a12200;
 }
 
 @keyframes move{
@@ -73,4 +77,28 @@ background-color: #042337;
         margin-top: 50px;
         height: 320px;
     }
+}
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.label
+    {
+        font-size: 20px;
+        color: white;
+        padding: 10px;
+        display: inline-block;
+        opacity: 0.7;
+        cursor: pointer;
+        margin-right: 80px;
+    }
+.label:hover{
+    transform: scale(1.1);
+    opacity: 1;
 }

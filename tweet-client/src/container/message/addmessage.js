@@ -43,15 +43,19 @@ class AddMessage extends Component{
         }
         return(
             <div className={classes.form} >
+
             {redirect}
-                <form onSubmit={(event)=>this.submitHandler(event)}>
+            <div className={classes.formContainer1}>                <form className={classes.formContainer} onSubmit={(event)=>this.submitHandler(event)}>
                     <div className={classes.item}>Enter The Message</div>
                     <textarea  onChange={(event)=>this.onchangehandler(event)} cols={40} rows={10}  />
-                    <input type="file" onChange={this.imageHandle} />
+                    <input className={classes.inputfile} type="file" id="file" onChange={this.imageHandle} />
+                    <label for="file" className= {classes.label}><i class="fa fa-upload" aria-hidden="true"></i>  Choose Image file....</label>
                             <input className={classes.submit} type="submit" value="Submit" />
 
                         
                 </form>
+                </div>
+
             </div>
         )
     }

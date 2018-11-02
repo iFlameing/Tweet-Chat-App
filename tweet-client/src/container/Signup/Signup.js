@@ -41,9 +41,13 @@ class SignUP extends Component{
         return (
             <div className={classes.container}>
             {redirect}
-                <div>
-                    <div>
-                        <form className={classes.form} onSubmit={(event)=> this.handleOnsubmit(event)}>
+            <div className={classes.signupIntro}>
+            <h2 className={classes.h2}>Create your account</h2>
+             <p className={classes.p}>Please provide valid Email Address because forget password link is sent to your valid email Address.
+             Profile Image Uploading is required.</p>
+            </div>
+            <div className={classes.Input}>
+            <form className={classes.form} onSubmit={(event)=> this.handleOnsubmit(event)}>
                             <div  className={classes.item} >
                                     <div>
                                         <input className={classes.input} type="text" onChange={this.handleChange.bind(this)} name="email" placeholder="Please type your email!" value={this.state.email}/>
@@ -57,16 +61,25 @@ class SignUP extends Component{
                                         <input className={classes.input} type="password"  name="password" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your Password"/>
                                     </div>
                                     <div>
-                                        <input type="file" onChange={this.onchangeHandler} />
+                                        <input type="file" className={classes.inputfile}  id="file" onChange={this.onchangeHandler} />
+                                        <label className={classes.label} for="file"><i class="fa fa-upload" aria-hidden="true"></i>     Choose a Image....</label>
+                                
                                     </div>
                                 <div>
                                     <input className={classes.submit} type="submit" value="SignUP"/>
                                 </div>  
-                                <span className = {classes.signup}>Already Registered</span><span className = {classes.signup} ><Link  to="/Login">Login</Link></span> 
+                                <span className = {classes.signup}>Already Registered?</span><span className = {classes.signup} ><Link  className={classes.link} to="/Login">Login</Link></span> 
                             </div>
                         </form>
-                    </div>
+            </div>
+                {/* <div className={classes.signupContainer}>
+                <div className={classes.signupIntro}>
+                    
                 </div>
+                    <div className={classes.Input}>
+                       
+                     </div>
+                </div> */}
             </div>
         )
     }
