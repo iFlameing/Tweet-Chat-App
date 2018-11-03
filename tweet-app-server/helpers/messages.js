@@ -3,8 +3,6 @@ var db = require('../models');
 
 exports.createMessage = function(req,res,next){
   const image = req.file ? req.file.path:""
-  console.log(req.file)
-  console.log(req.body.text)
   const newMessage = {
     text: req.body.text,
     userId: req.params.id,
@@ -24,9 +22,9 @@ exports.createMessage = function(req,res,next){
   }).catch(next);
 };
 
-exports.foundMessage = (req,res,next)=>{
+exports.foundMessage = function(req,res,next){
   db.Message.findById(req.params.id).populate("userId",{username:true,profileImageUrl:true}).then(function(message){
-    return res.status(200).json(m);
+    return res.status(200).json(message);
   }).catch(next);
 }
 

@@ -32,7 +32,7 @@ const upload = multer({
 })
 
 router.post('/',upload.single("files"), helpers.createMessage);
-router.get('/:id',helpers.findMessage);
+router.get('/:id',helpers.foundMessage);
 
 
 module.exports = router;
