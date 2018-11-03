@@ -1,3 +1,5 @@
+import comment from "../container/Comment/comment";
+
  export const authenticateUser =(token)=>(
 {
     type:"signUp",
@@ -266,6 +268,53 @@ export const Logout =()=>(
     dispatch=>{
         return dispatch({
             type:'logout'
+        })
+    }
+)
+
+//Comment Section 
+
+const POSTCOMMENT= (comment)=>({
+    type:"POSTCOMMENT",
+    payload:comment
+})
+
+const postcomment = (data,url)=>{
+    let token="";
+    if(localStorage.getItem('user-for-tweetApp')){
+        token = JSON.parse(localStorage.getItem('user-for-tweetApp')).token;
+    }
+    return fetch(url, {
+    method: "post",
+    headers: new Headers({
+        'Authorization': `Bearer ${token}`
+    }),
+    body: data
+    })
+    .then(resp => {
+        
+        if (!resp.ok) {
+            alert("Please Login Before Posting the message");
+        if (resp.status >= 400 && resp.status < 500) {
+            return resp.json().then(data => {
+            let err = {errorMessage: data.message};
+            throw err;
+            })
+        } else {
+            let err = {errorMessage: "Please try again later.  Server not responding."};
+            throw err;
+        }
+        }
+        return resp.json();
+    })
+}
+
+export const postComment = (data,url)=> (
+    dispatch=>{
+        postcomment(data,`/api/users/${url.userId}/messages/${url.id}/comments`)
+        .then(comment=>{
+            console.log(comment);
+            dispatch(POSTCOMMENT(comment))
         })
     }
 )

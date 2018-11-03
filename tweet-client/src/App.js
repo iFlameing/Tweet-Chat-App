@@ -16,11 +16,17 @@ import Aux from './hoc/aux'
 
 class App extends Component {
   render() {
+    let image=""
+    let user = JSON.parse(localStorage.getItem('user-for-tweetApp'))
+    if(user){
+     image= `http://localhost:8081/${user.profileImageUrl}`
+
+    }
     return (
       <div>
         <Aux>
         <div>
-           <Navlink  logout={this.props.logout} username={this.props.username}/>
+           <Navlink  logout={this.props.logout} username={this.props.username} image={image}/>
         </div>
         <div>
         <Switch>

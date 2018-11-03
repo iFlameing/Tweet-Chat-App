@@ -41,7 +41,8 @@ class Message extends Component{
         let count=0;
         if(message.length!==0){
             count++;
-            message1 =  message.map(mes=>( <div key={count.toString()} ><MessageLoader   
+            message1 =  message.map(mes=>( <div key={count.toString()} >
+            <MessageLoader   
             imageId={mes._id}
             name={mes.userId.username}
             text={mes.text}

@@ -63,3 +63,19 @@ p{
 .flex3{
     flex: 2;
 }
+
+.container2{
+    display: flex;
+    border: 2px solid red;
+}
+
+.first1{
+    flex: 1;
+}
+
+.second1{
+    flex: 1;
+}
+.showcomment1{
+    flex: 2;
+}

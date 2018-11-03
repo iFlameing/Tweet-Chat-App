@@ -5,6 +5,7 @@ import {createStore,applyMiddleware, combineReducers} from 'redux';
 import{BrowserRouter} from 'react-router-dom'
 import rootReducer from '../src/reducer/rootReducer'
 import Message from '../src/reducer/message'
+import comment from '../src/reducer/comment'
 import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
@@ -12,7 +13,8 @@ import {autoUser} from './action/index'
 import registerServiceWorker from './registerServiceWorker';
 const commonreducer = combineReducers({
     losin:rootReducer,
-    message:Message
+    message:Message,
+    comment:comment,
 })
 const store=createStore(commonreducer,applyMiddleware(thunk));
 

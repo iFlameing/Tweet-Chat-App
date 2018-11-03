@@ -14,7 +14,7 @@ const NavLink1 = (props)=>{
         if(props.logout){
             nav=[
             <li >
-                <NavLink to="/profile">{props.username}</NavLink>
+                <NavLink to="/profile"><img className={classes.image} src={props.image} alt="profileImage" /></NavLink>
             </li>,
             <li>
                 <NavLink to="/logout">Logout</NavLink>
@@ -30,14 +30,12 @@ const NavLink1 = (props)=>{
             </li>
         </div>
         <div className = {classes.item}>
-            <li>
+            {/* <li>
+                I have to implement this after the complementaion of basis tweet-app.
                 <NavLink  to="/questions">QuestionsOfSmvdu</NavLink>
-            </li>
+            </li> */}
             <li>
-                <NavLink  to="/addMessage">Message</NavLink>
-            </li>
-            <li>
-                <NavLink  to="/profile">profile</NavLink>
+                <NavLink  to="/addMessage">Tweet</NavLink>
             </li>
             {nav}
            

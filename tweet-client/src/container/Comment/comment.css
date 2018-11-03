@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    margin-top: 30px;
+}
+.img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.first{
+    margin-right: 10px;
+}
+.textarea{
+    width: 510px;
+    border: none;
+    border: 2px solid #87cefa;
+    border-radius: 5px;
+    color: black;
+}
+.textarea:focus{
+    border: 2px solid #55b7f9;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.submit
+{
+    float: right;
+    padding: 5px;
+    background: #55b7f9;    
+    outline: none;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;  
+    color: white; 
+}
+.submit:hover{
+    transform: scale(1.1);
+    background: #87cefa;
+}
+
+.labelContainer{
+    margin-top: 10px;
+}
+
+.label{
+    font-size: 15px;
+    padding: 5px;
+    background: #55b7f9;
+    color: white;
+
+}

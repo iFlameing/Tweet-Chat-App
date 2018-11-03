@@ -50,7 +50,7 @@ class AddMessage extends Component{
                     <textarea  onChange={(event)=>this.onchangehandler(event)} cols={40} rows={10}  />
                     <input className={classes.inputfile} type="file" id="file" onChange={this.imageHandle} />
                     <label for="file" className= {classes.label}><i class="fa fa-upload" aria-hidden="true"></i>  Choose Image file....</label>
-                            <input className={classes.submit} type="submit" value="Submit" />
+                <input className={classes.submit} type="submit" value="Submit" />
 
                         
                 </form>

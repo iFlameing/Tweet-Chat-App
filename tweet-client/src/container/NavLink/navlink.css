@@ -85,3 +85,9 @@
         opacity: 1;
     }
 }
+
+.image{
+    height: 30px;
+    width: 35px;
+    border-radius: 50%;
+}
