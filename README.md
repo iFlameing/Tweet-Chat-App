@@ -4,7 +4,7 @@
 <h3>How to build the project</h3>
 <ul>
 <li>Clone this repo</li>
-<li>Install mongodb by going to this link.</li>
+<li>Install mongodb by going to this [link](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/).</li>
 <li>Always restart the mongodb by runing this command 'sudo service mongodb start'</li>
 <li>Then run npm install </li>
 <li>Then go into tweet-app-server file and run the command npm start</li>
@@ -13,3 +13,5 @@
 <p>YOu see the app running in the default browser at port 3000</p>
 
 </ul>
+
+<h2>If you have running server problem just delete the node_modules present into tweet-server-app file and reinstall with npm install</h2>
