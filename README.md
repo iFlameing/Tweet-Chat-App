@@ -6,7 +6,7 @@
 <li>Clone this repo</li>
 <li>Install mongodb by going to this [link](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/).</li>
 <li>Always restart the mongodb by runing this command 'sudo service mongodb start'</li>
-<li>Then run npm install </li>
+<li>Then run npm install by going into each file i.e tweet-app-server and tweet-client</li>
 <li>Then go into tweet-app-server file and run the command npm start</li>
 <li>Then go to tweet-client and open another terminal and then type command npm start </li>
 <p>Thats It</p>
