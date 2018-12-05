@@ -10,7 +10,7 @@
 <li>Then go into tweet-app-server file and run the command npm start</li>
 <li>Then go to tweet-client and open another terminal and then type command npm start </li>
 <p>Thats It</p>
-<p>YOu see the app running in the default browser at port 3000</p>
+<p>You see the app running in the default browser at port 3000</p>
 
 </ul>
 
