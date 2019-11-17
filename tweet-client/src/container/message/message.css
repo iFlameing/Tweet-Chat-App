@@ -13,6 +13,7 @@ background-color: #e4ebf0;
     flex: 1;
     margin-right: 60px;
     background-color: white;
+    padding:10px;
 }
 .message{
     flex: 2;
@@ -21,8 +22,11 @@ background-color: #e4ebf0;
 }
 
 .span{
-    font-size: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left:5px;
 }
-h1{
-    font-size: 20px;
+.Who_to_follow {
+    font-size: 30px;
+    margin:0;
 }

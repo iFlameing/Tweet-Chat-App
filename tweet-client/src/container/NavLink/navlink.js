@@ -36,10 +36,10 @@ const NavLink1 = (props)=>{
                 <NavLink  to="/addMessage">Message</NavLink>
             </li>
             <li>
-                <NavLink  to="/profile">profile</NavLink>
+                <NavLink  to="/profile">Profile</NavLink>
             </li>
             {nav}
-           
+
         </div>
     </div>
    )
