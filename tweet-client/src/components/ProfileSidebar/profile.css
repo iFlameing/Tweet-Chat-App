@@ -22,9 +22,10 @@
     left: 20px;
 }
 .span{
-    font-size: 15px;
+    font-size: 18px;
     color: grey;
-    margin-right: 10px;
+    margin-right: 20px;
+    text-decoration: none;
 }
 .span2{
     font-size: 15px;
@@ -32,7 +33,7 @@
     color: #55b7f9;
     margin-left:5px;
     position: relative;
-    top: -15px; 
+    top: -15px;
 }
 h1{
     font-size: 20px;

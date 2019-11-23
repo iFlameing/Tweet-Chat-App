@@ -1,0 +1,12 @@
+.upload{
+    color: white;
+    border-radius: 8px;
+    text-shadow: 0 1px 1px rgba(111, 126, 133, 0.2);
+    padding: 10px 24px;
+    border: none;
+    outline: none;
+}
+
+.upload{
+    background: rgb(21, 128, 128);
+}

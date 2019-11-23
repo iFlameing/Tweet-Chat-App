@@ -1,0 +1,17 @@
+.minor{
+    color: white;
+    border-radius: 8px;
+    text-shadow: 0 1px 1px rgba(111, 126, 133, 0.2);
+    padding: 10px 24px;
+    border: none;
+    outline: none;
+}
+
+.minor{
+    background: rgb(21, 128, 128);
+}
+
+button{
+    padding: 10px;
+    margin: 10px;
+}

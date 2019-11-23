@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { message } from '../../action/index'
-import MessageLoader from '../messages/messages'
-import classes from './message.css'
-import Aux from '../../hoc/aux'
-import { NavLink } from "react-router-dom"
-import Profile from '../../components/ProfileSidebar/profile'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { message } from '../../action/index';
+import MessageLoader from '../messages/messages';
+import classes from './message.css';
+import Aux from '../../hoc/aux';
+import { NavLink } from "react-router-dom";
+import Profile from '../../components/ProfileSidebar/profile';
+import SplitPane, { Pane } from 'react-split-pane';
 
 
 class Message extends Component {
@@ -38,13 +39,16 @@ class Message extends Component {
                     <div className={classes.message} >
                         {message1}
                     </div>
+
                     <div className={classes.second}>
-                        <h1>Who To Follow <span className={classes.span}><NavLink to="/">Refresh</NavLink></span> <span className={classes.span}><NavLink to="/">ViewAll</NavLink></span></h1>
+                        <h1 className={classes.Who_to_follow}>Who To Follow</h1>
+                        <span className={classes.span}><NavLink to="/" style={{textDecoration: "none"}}>Refresh</NavLink></span> <span className={classes.span}><NavLink to="/" style={{textDecoration: "none"}}>ViewAll</NavLink></span>
                         <p>This website is madeup by Alok Kumar just for the learning purpose and how
                             the new technology is evolving . I have to implement more and more feature so that
                             I learn the new technology very fast.
                     </p>
                     </div>
+
                 </Aux>
             </div>
         )
