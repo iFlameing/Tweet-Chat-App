@@ -17,7 +17,7 @@ class Profile extends Component{
 
     render(){
         return(
-            <div>
+            <div className={classes.profile_button}>
                 <input type="file" onChange={this.onchangeHandler} className={classes.upload}/>
                 <button onClick={this.fileSubmit} className={classes.upload}>Upload</button>
             </div>

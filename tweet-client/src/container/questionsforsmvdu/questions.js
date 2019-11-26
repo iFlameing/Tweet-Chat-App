@@ -31,7 +31,7 @@ minor3(e){
     render(){
         console.log(this.state)
         if(this.state.show){
-            return(<div>
+            return(<div className={classes.question_button}>
                     <div ><Question name="Minor1" clicked={this.minor1} /></div>
                     <div ><Question name="Minor2"  clicked ={this.minor2}/></div>
                     <div ><Question name="Minor3"  clicked ={this.minor3}/></div>
@@ -39,7 +39,7 @@ minor3(e){
         )
         } else{
             return (
-                <div>
+                <div className={classes.question_button}>
                     <button name="firstsemester"    onClick={(event)=>this.Clicked(event) } className={classes.minor}>FirstSemester    </button>
                     <button name="secondsemester"   onClick={(event)=>this.Clicked(event) } className={classes.minor}>SecondSemester   </button>
                     <button name="thirdsemester"    onClick={(event)=>this.Clicked(event) } className={classes.minor}>ThirdSemester    </button>

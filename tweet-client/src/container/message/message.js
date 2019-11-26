@@ -6,7 +6,6 @@ import classes from './message.css';
 import Aux from '../../hoc/aux';
 import { NavLink } from "react-router-dom";
 import Profile from '../../components/ProfileSidebar/profile';
-import SplitPane, { Pane } from 'react-split-pane';
 
 
 class Message extends Component {

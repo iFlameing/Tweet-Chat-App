@@ -11,25 +11,25 @@
 .form{
     margin:auto ;
     width: 500px;
-    margin-top: 0%; 
+    margin-top: 0%;
     background-color: white;
     box-sizing: border-box;
     box-shadow:    2px 3px 2px  #ccc;
-    animation: move 2s ease-out  1 forwards; 
+    animation: move 2s ease-out  1 forwards;
 }
 .item{
     margin-top: 20px;
 }
 
 .input{
- 
+
         width: 50%;
         padding: 5px;
         margin: 8px 0;
         box-sizing: border-box;
         border: 1px solid gray;
-    
-    
+
+
 }
 
 .submit{
@@ -51,6 +51,7 @@
     font-size: 15px;
     color:gray;
     margin-right: 5px;
+    text-decoration: none;
 }
 
 .submit:hover{

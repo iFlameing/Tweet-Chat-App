@@ -57,9 +57,9 @@ class Login extends Component{
                 const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
                 isValid = pattern.test( value ) && isValid
             }
-        
+
         }
-        
+
         return isValid;
 }
     onchange(e){
@@ -75,7 +75,7 @@ class Login extends Component{
 
         let formIsValid=true;
 
-        for(let key in change){  
+        for(let key in change){
             formIsValid=change[key].valid && formIsValid
         }
         this.setState({
@@ -88,7 +88,7 @@ class Login extends Component{
         let submit=(<button disabled >Login</button>)
         if(this.state.formisvalid){
             submit=( <input className={classes.submit} type="submit" value="Login"/>)
-           
+
         }
         return (
             <div className={classes.container}>
@@ -104,12 +104,12 @@ class Login extends Component{
 
                         </div>
                         <div>
-                            <input className={classes.input} type="password"  name='password' onChange={(event)=> this.onchange(event)} placeholder="Enter your Password" /> 
+                            <input className={classes.input} type="password"  name='password' onChange={(event)=> this.onchange(event)} placeholder="Enter your Password" />
                         </div>
-                        <div>
+                        <div className={classes.sub}>
                             {submit}
                         </div>
-                        <span  className = {classes.signup}></span><span className = {classes.signup} ><Link to="/resetpassword" >forgetpassword</Link></span> 
+                        <span  className = {classes.signup}></span><span className = {classes.signup} ><Link to="/resetpassword" style={{textDecoration:'none'}}>ForgetPassword</Link></span>
                      </div>
                 </form>
             </div>

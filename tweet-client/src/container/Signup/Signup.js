@@ -22,7 +22,7 @@ class SignUP extends Component{
         data.append('email',this.state.email)
         data.append('username',this.state.username)
         data.append('password',this.state.password)
-        
+
         this.props.submit(data)
     }
 
@@ -48,11 +48,11 @@ class SignUP extends Component{
                                     <div>
                                         <input className={classes.input} type="text" onChange={this.handleChange.bind(this)} name="email" placeholder="Please type your email!" value={this.state.email}/>
                                     </div>
-                              
+
                                     <div>
                                         <input className={classes.input} type="text" name="username" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your UserName" value={this.state.username}/>
                                     </div>
-                               
+
                                     <div>
                                         <input className={classes.input} type="password"  name="password" onChange={(event)=> this.handleChange(event)}  placeholder="Please type your Password"/>
                                     </div>
@@ -61,8 +61,8 @@ class SignUP extends Component{
                                     </div>
                                 <div>
                                     <input className={classes.submit} type="submit" value="SignUP"/>
-                                </div>  
-                                <span className = {classes.signup}>Already Registered</span><span className = {classes.signup} ><Link  to="/Login">Login</Link></span> 
+                                </div>
+                                <span className = {classes.signup}>Already Registered</span><span className = {classes.signup} ><Link  to="/Login" style={{textDecoration:'none'}}>Login</Link></span>
                             </div>
                         </form>
                     </div>
