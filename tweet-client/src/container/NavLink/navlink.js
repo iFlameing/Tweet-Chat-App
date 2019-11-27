@@ -30,9 +30,6 @@ const NavLink1 = (props)=>{
         </div>
         <div className = {classes.item}>
             <li>
-                <NavLink  to="/questions">QuestionsOfSmvdu</NavLink>
-            </li>
-            <li>
                 <NavLink  to="/addMessage">Message</NavLink>
             </li>
             <li>
