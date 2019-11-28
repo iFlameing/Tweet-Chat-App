@@ -1,6 +1,7 @@
 import React,{Component} from "react"
 import {connect} from 'react-redux'
 import {changepassword} from '../../action/index'
+import classes from './newpassword.css';
 
 class NewPassword extends Component{
     state={
@@ -27,13 +28,13 @@ class NewPassword extends Component{
             <div>
                 <form>
                     <div>
-                        <input type="password" name="password" onChange={(event)=>this.onchange(event)} placeholder="NewPassword"/>
+                        <input className={classes.input}type="password" name="password" onChange={(event)=>this.onchange(event)} placeholder="NewPassword"/>
                     </div>
                     <div>
-                        <input type="text" name="confirmpassword" placeholder="ConfirmNewPassword"/>
+                        <input className={classes.input} type="password" name="confirmpassword" placeholder="ConfirmNewPassword"/>
                     </div>
                     <div>
-                        <input type="submit" onClick={(event)=>this.onsubmit(event)} value="ChangePassword"/>
+                        <input className={classes.kesh} type="submit" onClick={(event)=>this.onsubmit(event)} value="ChangePassword"/>
                     </div>
                 </form>
             </div>

@@ -7,7 +7,7 @@ const ResetForm =(props)=>{
                 <form>
                     <div>
                         <label>Email</label>
-                        <input type="email"  onChange={props.change} placeholder="Enter your registered Email"/> 
+                        <input type="email"  onChange={props.change} placeholder="Enter your registered Email"/>
                     </div>
                     <div>
                         <input type="submit" value="Submit"/>
