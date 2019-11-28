@@ -29,7 +29,7 @@
     "hoek": "^5.0.4",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "node-macaddress": "^0.2.4",
     "node-mime": "^1.0.0",
     "object-assign": "4.1.1",
