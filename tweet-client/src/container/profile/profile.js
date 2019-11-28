@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import classes from './profile.css';
 
 class Profile extends Component{
 
@@ -17,9 +18,9 @@ class Profile extends Component{
 
     render(){
         return(
-            <div>
-                <input type="file" onChange={this.onchangeHandler} />
-                <button onClick={this.fileSubmit}>Upload</button>
+            <div className={classes.profile_button}>
+                <input type="file" onChange={this.onchangeHandler} className={classes.upload} />
+                <button onClick={this.fileSubmit} className={classes.upload}>Upload</button>
             </div>
         )
     }

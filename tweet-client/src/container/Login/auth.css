@@ -11,25 +11,26 @@
 .form{
     width: 500px;
     margin:auto ;
-    margin-top: 20%; 
+    margin-top: 20%;
     background-color: white;
     box-sizing: border-box;
     box-shadow:    2px 3px 2px  #ccc;
-    animation: move 2s ease-out  1 forwards; 
+    animation: move 2s ease-out  1 forwards;
 }
 .item{
     margin-top: 50px;
 }
 
 .input{
- 
+
         width: 50%;
         padding: 5px;
         margin: 8px 0;
         box-sizing: border-box;
         border: 1px solid gray;
-    
-    
+        border-radius:5px;
+
+
 }
 
 .submit{
@@ -48,7 +49,7 @@
 }
 
 .signup{
-    font-size: 15px;
+    font-size: 18px;
     color:gray;
     margin-right: 5px;
 }
@@ -75,7 +76,7 @@
 
 @media(max-width:500px){
     .form{
-    animation: movel 2s ease-out  1 forwards; 
+    animation: movel 2s ease-out  1 forwards;
     }
 }
 @keyframes movel{

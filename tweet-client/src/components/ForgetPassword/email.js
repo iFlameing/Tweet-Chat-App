@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
 import {resetpassword} from "../../action"
+import classes from './email.css';
 
 class  ResetForm  extends Component{
 
@@ -28,11 +29,11 @@ class  ResetForm  extends Component{
             <div>
                 <form>
                     <div>
-                        <label>Email</label>
-                        <input type="email"  onChange={(event)=> this.onchange(event)}  placeholder="Enter your registered Email"/> 
+                        <label className={classes.lavel}>Email</label>
+                        <input  className={classes.input} type="email"  onChange={(event)=> this.onchange(event)}  placeholder="Enter your registered Email"/>
                     </div>
                     <div>
-                        <input type="submit" onClick={(event)=>this.submitHandler(event)} value="Submit"/>
+                        <input className={classes.kesh} type="submit" onClick={(event)=>this.submitHandler(event)} value="Submit"/>
                     </div>
                 </form>
             </div>

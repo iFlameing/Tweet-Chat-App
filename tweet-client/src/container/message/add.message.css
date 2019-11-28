@@ -34,8 +34,8 @@ textarea{
     padding: 5px;
     font-size: 20px;
     text-transform: uppercase;
-    background-color:#042337;
-    box-shadow: 0 6px #042337;
+    background: rgb(21, 128, 128);
+    box-shadow: rgb(16, 85, 85);
     position: relative;
     color: black;
     margin-top: 10px;
@@ -43,9 +43,9 @@ textarea{
 }
 
 .submit:hover{
-box-shadow: 0 4px #042337;
-top: 2px;
-background-color: #042337;
+    box-shadow: 0 4px #042337;
+    top: 2px;
+    background-color:rgb(16, 85, 85);
 }
 
 @keyframes move{
