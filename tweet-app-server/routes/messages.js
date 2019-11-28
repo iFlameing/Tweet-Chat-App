@@ -31,7 +31,9 @@ const upload = multer({
   fileFilter:fileFilter
 })
 
-router.post('/',upload.single("files"), helpers.createMessage);
+router.post('/messages',upload.single("files"), helpers.createMessage);
+
+
 
 
 module.exports = router;

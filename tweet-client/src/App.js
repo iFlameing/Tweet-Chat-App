@@ -8,6 +8,7 @@ import Profile from './container/profile/profile'
 import Questions from './container/questionsforsmvdu/questions'
 import ResetForm from './components/ForgetPassword/email'
 import AddMessage from './container/message/addmessage'
+import ParticularMessage from './container/ParticularMessage/particularMessage'
 import {Switch,Route,withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import NewPassword from './components/ForgetPassword/newpassword';
@@ -32,6 +33,7 @@ class App extends Component {
         <Route exact path = '/resetpassword' component={ResetForm} />
         <Route exact path="/changePassword/:id/:token"  component={NewPassword}/>
         <Route  exact path="/"       component={Message}/>
+        <Route exact path="/api/messages/:id/messages" component={ParticularMessage} />
       </Switch>
         </div>
 

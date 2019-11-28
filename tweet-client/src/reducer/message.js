@@ -1,6 +1,7 @@
 const initialstate = {
     message:[],
-    messagepost:false
+    messagepost:false,
+    comment:{},
 }
 
 const messageReducer =(state=initialstate,action)=>{
@@ -14,6 +15,12 @@ const messageReducer =(state=initialstate,action)=>{
 
             return{
                 ...state,messagepost:true
+            }
+        }
+        case "GET_MESSAGE":{
+            console.log("this is from reducer",JSON.stringify(action.payload))
+            return{
+                ...state,comment:action.payload,messagepost:false
             }
         }
         default: {

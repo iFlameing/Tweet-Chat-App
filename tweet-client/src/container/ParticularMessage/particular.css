@@ -1,0 +1,8 @@
+.particularMessageContainer{
+    display: flex;
+    flex-flow: column;
+    width: 500px;
+    position: relative;
+    top: 50px;
+    margin-left: 30%;
+}

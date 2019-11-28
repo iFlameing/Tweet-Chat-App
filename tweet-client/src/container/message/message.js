@@ -27,7 +27,7 @@ class Message extends Component {
         let count = 0;
         if (message.length !== 0) {
             count++;
-            message1 = message.map(mes => (<div key={count.toString()} ><MessageLoader name={mes.userId.username} text={mes.text} postimage={`http://localhost:8081/${mes.image}`} img={`http://localhost:8081/${mes.userId.profileImageUrl}`} /></div>))
+            message1 = message.map(mes => (<div key={count.toString()} ><MessageLoader id={mes._id} name={mes.userId.username} text={mes.text} postimage={`http://localhost:8081/${mes.image}`} img={`http://localhost:8081/${mes.userId.profileImageUrl}`} /></div>))
         }
 
         return (

@@ -235,3 +235,27 @@ export const Logout =()=>(
         })
     }
 )
+
+const getMessage = (res) =>( {
+    type:"GET_MESSAGE",
+    payload: res,
+})
+export const getParticularMessage = (id) => (
+    dispatch=>{
+        getParticularMessageRequest(`http://localhost:8081/api/messages/${id}/messages`).then(res=>{ console.log("this is from action",JSON.stringify(res)); return dispatch(getMessage(res))})
+    }
+)
+
+const getParticularMessageRequest = (url) => {
+    console.log(url)
+    let token="";
+    if(localStorage.getItem('user-for-tweetApp')){
+         token = JSON.parse(localStorage.getItem('user-for-tweetApp')).token;
+    }
+    return fetch(url, {
+      method: "get",
+      headers: new Headers({
+        'Authorization': `Bearer ${token}`
+      }),
+    }).then(res=>(res.json()))
+}
